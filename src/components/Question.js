@@ -10,11 +10,13 @@ function Question({ question, onAnswered }) {
 
     if (timeRemaining === 0) {
       onAnswered(false);
+      setTimeRemaining(10)
     }
 
     return () => {
       clearTimeout(timer);
     };
+
   }, [timeRemaining, onAnswered]);
 
   function handleAnswer(isCorrect) {
